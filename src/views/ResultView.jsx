@@ -55,7 +55,6 @@ const ResultView =({weather, unit}) => {
     //setForecast(testForecast);
     Api.getForecast(weather.coord.lat, weather.coord.lon, unit)
       .then(response => {
-        console.log(response);
         setForecast(response);
       })
       .catch(e => {
