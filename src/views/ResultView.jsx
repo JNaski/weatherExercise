@@ -27,7 +27,7 @@ const ResultView =({weather, unit}) => {
       } else if(weather.main.temp > 20) {
         tempStyle = "red-600";
       }
-    } else if(unit === -'imperial') {
+    } else if(unit === 'imperial') {
       unitString = '°F';
       if(weather.main.temp <= 32 && weather.main.temp >= -4) {
         tempStyle = "blue-300";
