@@ -4,15 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve  --hot --open --port 3000  --mode development",
+    "build:tailwind": "tailwind build -i src/tailwind.css -o src/tailwind.output.css",
+    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",
+    "build:webpack": "webpack serve --hot --port 3000 --mode development",
+    "start": "npm-run-all build:tailwind --parallel watch:tailwind build:webpack",
     "build": "webpack --config webpack.config.js --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
+    "chokidar-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.20.5",
+    "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
