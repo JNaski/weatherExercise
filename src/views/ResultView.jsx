@@ -48,19 +48,19 @@ const ResultView =({weather, unit}) => {
   }
 
   useEffect(() => {
-   if(weather !== null && forecast === null) {
+   if(weather !== null ) {
     // To use test data, comment out Api call
     // and remoce comment from set forecast
 
-    setForecast(testForecast);
-    /*Api.getForecast(weather.coord.lat, weather.coord.lon, unit)
+    //setForecast(testForecast);
+    Api.getForecast(weather.coord.lat, weather.coord.lon, unit)
       .then(response => {
-        setForecast(response);
         console.log(response);
+        setForecast(response);
       })
       .catch(e => {
         console.error("Error ", e);
-      });*/
+      });
     }
   });
 
@@ -73,14 +73,14 @@ const ResultView =({weather, unit}) => {
             {date} - {time}
           </p>
         }
-        <div className="ml-5 mt-10 mb-2">
-          <div className="grid md:grid-cols-3 gap-3 mb-10">
+        <div className="ml-5 mr-5 mt-10 mb-2">
+          <div className="grid md:grid-cols-3 gap-3 mb-10 bg-blue-100 rounded">
             <div>
-            <p className={"text-3xl pt-4 text-" + tempStyle}>{weather?.main.temp} {unitString}</p>
-            <p className="text-xs ml-2">Feels like: {weather?.main.feels_like} {unitString}</p>
+            <p className={"text-3xl pt-4 text-center	 text-" + tempStyle}>{weather?.main.temp} {unitString}</p>
+            <p className="text-xs ml-2 text-center	">Feels like: {weather?.main.feels_like} {unitString}</p>
             </div>
             <div>
-            <img src={imageSource} className="-mt-3 -mb-3" />
+            <img src={imageSource} className="-mt-3 -mb-3 mx-auto" />
             </div>
             <div className="text-center	">
               <p>Wind direction</p>
@@ -112,12 +112,12 @@ const ResultView =({weather, unit}) => {
 
         </div>
       </div>
-      <div>
+      <div className="mb-4">
         {/*TODO implement weathermap here */}
       </div>
-      <div className="ml-5 mb-10">
+      <div className="ml-5 mr-5 mb-10 h-full">
         <h1 className="text-2xl text-bold mt-10 mb-5 underline">7 days forecast</h1>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid md:grid-cols-4 sm:grid-cols-1 gap-2">
           {forecast?.daily.map((day, index) => 
             index !== 0 &&
             <div key={index} className={"border border-green-700 rounded text-center items-center bg-gradient-to-b from-" + tempStyle + " via-white"}>

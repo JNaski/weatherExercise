@@ -15,7 +15,7 @@ const SearchView = ({submitSearch}) => {
   }
 
   return (
-    <div className="bg-gray-300 h-full px-3 py-3">
+    <div className="px-3 py-3">
       <h1 className="mt-1 mb-5 text-xl font-extrabold text-lg">Search for local weather</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
        <FormTextInput 
@@ -33,7 +33,7 @@ const SearchView = ({submitSearch}) => {
         <PrimaryButton className="float-right">Search</PrimaryButton>
       </form>
       
-      <p className="mt-20 text-sm">* Enter city to check weather, you can also select the measurement units</p>
+      <p className="mt-20 text-sm">*Enter city to check weather, you can also select the measurement units</p>
     </div>
   );
 };

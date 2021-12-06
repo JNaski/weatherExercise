@@ -23,19 +23,19 @@ const App = () => {
       // To use test data, comment out Api call
       // and remoce comment from set result
 
-      setResult(testData);
-      /*Api.getWeather(city, unit)
+      //setResult(testData);
+      Api.getWeather(city, unit)
       .then(response => {
           setResult(response);
       })
       .catch(e => {
         console.error("Error ", e);
-      });*/
+      });
     }
   })
 
   return(
-    <div className="md:flex h-full grid grid-cols-1 h-1/3">
+    <div className="md:flex h-full grid grid-cols-1 h-1/3 bg-gradient-to-b from-blue-500">
       <div className="md:w-1/6 ms:h-1/6">
         <SearchView submitSearch={submitSearch} />
       </div>

@@ -17,7 +17,7 @@ export const FormSelect = ({id, inputRef, label, options, defaultValue, onChange
       </select>
       <label
         htmlFor={id}
-        className={"absolute rounded text-sm text-gray-600 top-0 bg-gray-300 p-2 pt-3 -z-1 origin-0 leading-tight"}
+        className={"absolute rounded text-sm text-gray-600 top-0 bg-transparent p-2 pt-3 -z-1 origin-0 leading-tight"}
       >
         {label}
       </label>

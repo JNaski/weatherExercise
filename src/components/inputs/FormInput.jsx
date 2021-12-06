@@ -12,7 +12,7 @@ export const FormTextInput = ({id, label, inputRef, autoComplete}) =>
       autoComplete={autoComplete || 'on'}
       placeholder=' '
     />
-    <label htmlFor={id} className="absolute rounded text-sm text-gray-600 top-0 bg-gray-300 p-2 pt-3 -z-1 duration-300 origin-0 leading-tight">
+    <label htmlFor={id} className="absolute rounded text-sm text-gray-600 top-0 bg-transparent p-2 pt-3 -z-1 duration-300 origin-0 leading-tight">
       {label}
     </label>
   </div>;
