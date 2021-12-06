@@ -23,7 +23,7 @@ const App = () => {
       // To use test data, comment out Api call
       // and remoce comment from set result
 
-      //setResult(testData);
+      setResult(testData);
       Api.getWeather(city, unit)
       .then(response => {
           setResult(response);

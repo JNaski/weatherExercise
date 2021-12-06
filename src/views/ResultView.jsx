@@ -6,6 +6,7 @@ import { testForecast } from '../util/constants';
 const ResultView =({weather, unit}) => {
 
   const [forecast, setForecast] = useState(null);
+  const [history, setHistory] = useState(null);
   let date = null, time = null;
   let imageSource = null;
   let tempStyle = "red-300";
@@ -48,7 +49,7 @@ const ResultView =({weather, unit}) => {
   }
 
   useEffect(() => {
-   if(weather !== null ) {
+   if(weather !== null && weather !== history ) {
     // To use test data, comment out Api call
     // and remoce comment from set forecast
 
@@ -56,6 +57,7 @@ const ResultView =({weather, unit}) => {
     Api.getForecast(weather.coord.lat, weather.coord.lon, unit)
       .then(response => {
         setForecast(response);
+        setHistory(weather);
       })
       .catch(e => {
         console.error("Error ", e);
